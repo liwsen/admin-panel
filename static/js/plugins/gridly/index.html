@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gridly</title>
+    <script type="text/javascript" src="../../jq/jquery-1.11.3.min.js"></script>
+	<script src="jquery.gridly.js" type="text/javascript"></script>
+	<link href="jquery.gridly.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  .gridly {
+    position: relative;
+    width: 960px;
+  }
+  .brick {
+    border: 1px solid #999;
+    background-color: #eee;
+  }
+  .brick.small {
+    width: 140px;
+    height: 140px;
+  }
+  .brick.large {
+    width: 300px;
+    height: 300px;
+  }
+</style>
+</head>
+<body>
+<div class="gridly">
+  <div class="brick small"></div>
+  <div class="brick small"></div>
+  <div class="brick large"></div>
+  <div class="brick small"></div>
+  <div class="brick small"></div>
+  <div class="brick large"></div>
+</div>
+<script>
+  $('.gridly').gridly({
+    base: 60, // px 
+    gutter: 20, // px
+    columns: 12,
+    callbacks: {
+    	reordering: function(){
+	    	console.log('start');
+	    },
+    	reordered: function(){
+	    	console.log('end');
+	    }
+    }
+  });
+</script>
+</body>
+</html>
