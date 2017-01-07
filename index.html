@@ -342,9 +342,10 @@
 <script>
 	// 简单配置
 	seajs.config({
-		base: "./panel/",
+		base: "./",
 		paths: {
-			's': './static/'
+			'p': 'panel',
+			's': 'static'
 		},
 		alias: {
 			"jquery": "s/jq/jquery-1.11.3.min",
@@ -356,7 +357,7 @@
 	});
 	// 加载入口模块
 	seajs.use(['bootstrap_css']);
-	seajs.use(['jquery', 'js/panel'], function($, panel){
+	seajs.use(['jquery', 'p/js/panel'], function($, panel){
 		panel.init();
 	});
 </script>
